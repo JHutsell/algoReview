@@ -9,9 +9,10 @@
 //  we traverse through one branch of a tree until we get to a leaf, and then we work our way back to the trunk of the tree."
 // Implements a Stack, which is to say, Last in First out order. 
 // ** GOES DEEP
-// Time Complexity O(V + E) ~~~ V = Vertices E = Edges
+// Time Complexity O(V + E) ~~~ V = Vertices E = Edges; As it visits every vertex & edge in the worst case
 // Space Complexity(Of Balanced Tree) O(H) ~~~ H = Height
 
+// To print every node in a graph
 function DFS(node) {
     // create stack and add initial node
     let stack = new Stack(this.nodes.length);
@@ -21,7 +22,7 @@ function DFS(node) {
     explored.add(node);
 
     // continue until stack is empty
-    while(!stack.isEmpty()) {
+    while (!stack.isEmpty()) {
         let temp = stack.pop();
         // log every element
         console.log(temp)
@@ -56,3 +57,42 @@ g.addEdge("E", "F");
 g.addEdge("B", "G");
 
 g.DFS("A"); // => A D E F B G C
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+class Node {
+    constructor(data) {
+        this.data = data
+        this.children = []
+    }
+
+    add(data) {
+        this.children.push(new Node(data))
+    }
+
+    remove(data) {
+        this.children = this.children.filter(child => child.data !== data)
+    }
+}
+
+class Tree {
+    constructor() {
+        this.root = null
+    }
+}
+
+// To search for a value in a graph 
+function dfSearch(value) {
+    let collection = [this.root]
+
+    while (collection.length) {
+        let node = collection.shift()
+
+        if (node.data === value) {
+            return true
+        } else {
+            collection.unshift(...node.children)
+        }
+    }
+    return false
+}
