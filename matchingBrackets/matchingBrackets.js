@@ -27,14 +27,19 @@ function matchingBrackets(string) {
     for (let i = 0; i < string.length; i++) {
         let char = string[i];
 
+        // If any given character is an opening symbol, add it to stack
         if (openings[char]) {
             bracketStack.push(char)
+        // If any given character is a closing symbol, check if the stack is a) empty, return false => 
+        // b) if the final symbol in the stack is the correct corresponding start symbol, else return false
         } else if (closings.includes(char)) {
             if (bracketStack.length === 0 || (openings[bracketStack.pop()] !== char)) {
                 return false
             } 
         }
     }
+    // If you make it through the string, and the stack is empty, it shows that each symbol had => 
+    // the correct corresponding start/end combination
 
     return bracketStack.length === 0;
 }
