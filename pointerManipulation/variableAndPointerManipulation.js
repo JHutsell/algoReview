@@ -44,3 +44,8 @@ function twoSumMultiPointer(array, target) {
     // if we make it through the loop and we don't find our target, we can return false
     return false
 }
+
+// Another example of an algorithm that benefits from this technique is the longest palindrome =>
+// in a string problem 
+// A palindrome is a word, number, or sequence that reads the same from the front as it does the back
+// ex. "madam", 121
