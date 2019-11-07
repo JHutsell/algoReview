@@ -22,6 +22,8 @@ class LinkedList {
     constructor() {
         this.head = null;
         // head stores the first node in the list
+        this.tail = null;
+        // tail stores the final node in the list
         this.size = 0;
         // size stores the number of nodes in the list
     }
