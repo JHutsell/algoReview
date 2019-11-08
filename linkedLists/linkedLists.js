@@ -52,4 +52,17 @@ class LinkedList {
         this.size++;
     }
 
+    indexOf(element) {
+        var count = 0;
+        var current = this.head;
+
+        while(current != null) {
+            if(current.element === element) {
+                return count;
+                current = current.next
+            }
+        }
+        return false
+    }
+
 }
