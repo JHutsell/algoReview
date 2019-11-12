@@ -54,15 +54,63 @@ class LinkedList {
 
     indexOf(element) {
         var count = 0;
+        // count will be what we return as the index the element we are looking for
         var current = this.head;
+        // begin with the head node
 
         while(current != null) {
+            // iterate through each element of the list, as when we reach null, the list is done
             if(current.element === element) {
+                // if the current element is the one we are looking for, we can return the count
                 return count;
-                current = current.next
             }
+            count++;
+            current = current.next
+            // if we dont find the target at the current node, we increase the count as well as reassign =>
+            // the current node to be the next node, as to move through the entire list
         }
+        // if we don't find the target element, we can return false, as it is not contained in the linked list
         return false
+    }
+
+    insertAtIndex(element, index) {
+        // this function will insert a given element at a given "index" of the list
+        if (index > 0 && index > this.size)
+            return false
+            // if the desired index is not the first, and greater than the size of the list, it cannot be added
+        else {
+            let node = new Node(element);
+            let current, previous;
+            // node will store the given element to be added to the list
+            //current and previous will reference pointer nodes in the list
+
+            current = this.head;
+            if (index === 0) {
+                node.next = head 
+                this.head = node
+                // if the desired index is 0, or the start, we can assign the head to be the 'next' node to the =>
+                // node we will add, in doing so, the added node will now be the head
+            } else {
+                current = this.head;
+                let idx = 0;
+                // idx will represent the temporary index pointer, used to iterate through our list
+
+                while(idx < index) {
+                    idx++;
+                    previous = current;
+                    current = current.next;
+                    // if the index isnt 0, we will iterate through the list until we reach the desired index =>
+                    // moving through the list by increasing the temporary 'idx' and reassigning the current reference
+                }
+
+                node.next = current;
+                previous.next = node;
+                // once we find the desired index, we will insert it into that position by assigning the current node to =?
+                // follow the node we are adding, and making the previous point to the added node in that position
+            }
+            this.size++;
+            // adding a node to our list will incease it in size by 1
+        }
     }
 
 }
