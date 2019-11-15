@@ -113,4 +113,6 @@ class LinkedList {
         }
     }
 
+    // another common algorithm used to test skills, is to reverse a linked list
+
 }
