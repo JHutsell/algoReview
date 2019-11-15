@@ -115,4 +115,16 @@ class LinkedList {
 
     // another common algorithm used to test skills, is to reverse a linked list
 
+    reverse() {
+        let head = this.head;
+        let previous, temp;
+
+        while(head) {
+            temp = head.next;
+            head.next = previous;
+            previous = head;
+            head = temp;
+        }
+        return previous
+    }
 }
