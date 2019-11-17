@@ -116,16 +116,19 @@ class LinkedList {
     // another common algorithm used to test skills, is to reverse a linked list
 
     reverse() {
-        let head = this.head;
-        let previous, temp;
-        // we must keep reference to the head, previous node, and a temporary node 
-        // in order to reverse the list
+        let node = this.head;
+        let previous = null;
+        // we must keep reference to the head, previous node in order to reverse the list
 
-        while(head) {
-            temp = head.next;
-            head.next = previous;
-            previous = head;
-            head = temp;
+        while(node) {
+            var temp = node.next;
+            // save a temporary variable
+            node.next = previous;
+            // this will reverse our pointer
+            previous = node;
+            // incremenet previous to current node
+            node = temp;
+            // incremenet node to next node or null at the end of the list
         }
         return previous
     }
