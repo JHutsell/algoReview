@@ -118,6 +118,8 @@ class LinkedList {
     reverse() {
         let head = this.head;
         let previous, temp;
+        // we must keep reference to the head, previous node, and a temporary node 
+        // in order to reverse the list
 
         while(head) {
             temp = head.next;
