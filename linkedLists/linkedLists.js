@@ -132,4 +132,19 @@ class LinkedList {
         }
         return previous
     }
+
+    // this can also be done recursively
+
+    reverseRecursive() {
+        if(!this.head || !this.head.next) {
+            return this.head;
+        }
+
+        let head = this.head;
+        let temp = reverseRecursive(head.next);
+        head.next.next = ead;
+        head.next = undefined;
+        return temp;
+    }
+    
 }
