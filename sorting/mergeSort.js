@@ -31,3 +31,8 @@ function mergeSort(array) {
     let right = array.slice(midIndex)
     return merge(mergeSort(left), mergeSort(right))
 }
+
+// The time complexity of merge sort is O(nlogn), as the array is divided into two halves and take linear =>
+// time to merge two halves
+
+// Space complexity is O(n)

@@ -26,3 +26,7 @@ function quickSort(array) {
     return quickSort(left) + [pivot] + quickSort(right)
     // we then recursively call quick sort on each half, making sure to include our pivot as the middle point
 }
+
+// Time complexity of O(nlogn)
+
+// Space complexity is O(n)

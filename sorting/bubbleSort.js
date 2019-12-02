@@ -38,3 +38,5 @@ function bubbleSort(arr) {
 // In an ideal case, that being an already sorted list, the algorithm would run at O(n) time complexity, 
 // with the entire list still needing to be transversed. On average, bubble sort would operate at => 
 // O(n^2) time complexity, proving to be a rather slow and impractical approach to sorting
+
+// Space complexity would be O(1)
