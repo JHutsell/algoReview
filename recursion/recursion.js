@@ -39,3 +39,19 @@ function fibonacciMemo(num, memo) {
     // It is only having to do the calculations for each value once, as the values are being stored in our =>
     // object, instead of being calculated each time
 }
+
+// A more simple example, and the one usually used to demonstrate recursion is task of finding the nth factorial
+
+function factorial(num) {
+    if (num === 0) return 1;
+    // base case
+
+    return num * factorial(num - 1)
+    // recursive step
+}
+
+// Factorials are a corresponding value for a number, where that value is equal to each previous number multiplied =>
+// by the previous numbers, ex, 3! = 3 * 2 * 1 * 1; 5! = 5 * 4 * 3 * 2 * 1 * 1; with 0! = 1
+
+// In understanding this, depending on the number, we will calculate the factorial of the number 1 less than our desired num, 
+// then multiply our desired num by that value, we will have to calculate each factorial of the previous numbers until we reach 0
