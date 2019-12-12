@@ -15,7 +15,7 @@ function fibonacci(num) {
     // as such, our base case will be that if the desired fibonacci number is 1 or less, we =>
     // can just return 1
 
-    return fibonacci(num - 1) + fibonacci(num - 2)
+    return fibonacci(num - 1) + fibonacci(num - 2);
     // the recursive step is calling the function on the previous 2 numbers in the sequence
     // this will be done until the function reaches its base case
 }
@@ -34,7 +34,7 @@ function fibonacciMemo(num, memo) {
     if (num <= 1) return 1;
     // This is our previous base case, which is still valid
 
-    return memo[num] = fibonacciMemo(num - 1, memo) + fibonacciMemo(num - 2, memo)
+    return memo[num] = fibonacciMemo(num - 1, memo) + fibonacciMemo(num - 2, memo);
     // This is the recursive step, which calculates the value of the number, and stores it in our object
     // It is only having to do the calculations for each value once, as the values are being stored in our =>
     // object, instead of being calculated each time
@@ -46,7 +46,7 @@ function factorial(num) {
     if (num === 0) return 1;
     // base case
 
-    return num * factorial(num - 1)
+    return num * factorial(num - 1);
     // recursive step
 }
 
@@ -55,3 +55,13 @@ function factorial(num) {
 
 // In understanding this, depending on the number, we will calculate the factorial of the number 1 less than our desired num, 
 // then multiply our desired num by that value, we will have to calculate each factorial of the previous numbers until we reach 0
+// This can also be done more effectievly with memoization 
+
+function factorialMemo(num, memo) {
+    memo = memo || {};
+
+    if (memo[num]) return memo[num];
+    if (num === 0) return 1;
+
+    return memo[num] = num * factorial(num - 1);
+}
