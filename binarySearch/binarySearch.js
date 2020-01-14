@@ -15,12 +15,12 @@ function binarySearchIteration(array, num) {
     while (start <= end) {
         let middle = array.length / 2;
 
-        if (array[mid] === num) return true;
+        if (array[middle] === num) return true;
 
-        else if (arr[mid] < num) {
-            start = mid +1;
+        else if (arr[middle] < num) {
+            start = middle +1;
         } else {
-            end = mid - 1;
+            end = middle - 1;
         }
     }
     return false;
