@@ -13,17 +13,23 @@ function binarySearchIteration(array, num) {
     let end = array.length - 1;
 
     while (start <= end) {
+        // this function will iteratively go through the list with a while loop
+        // it will iterate from the start point to the end point
         let middle = array.length / 2;
-
+        // we first find the middle point then check if thats our target
         if (array[middle] === num) return true;
 
         else if (arr[middle] < num) {
             start = middle +1;
+            // if the middle point is less than the target, we move the start to the index after the middle index
         } else {
             end = middle - 1;
+            // if the middle point is greater than the target, we move the end to the index before the middle index
         }
+        // this process is repeated until the middle index value is equal to our target
     }
     return false;
+    // if we don't find the value in our list, we will return false, as it isnt't present in our list
 }
 
 function binarySearchRecursion(array, num) {
