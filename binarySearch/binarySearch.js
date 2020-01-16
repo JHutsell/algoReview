@@ -40,6 +40,7 @@ function binarySearchRecursion(array, num) {
 
     if (midValue > num) {
         return binarySearchRecursion(array.slice(0, midIndex), num)
+        // in this case, we are using recursion to call the function within itself, doing the same checks on our middle value
     } else if (midValue < num) {
         return binarySearchRecursion(array.slice(midIndex, array.length - 1), num)
     } else {
