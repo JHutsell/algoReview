@@ -33,7 +33,7 @@ function binarySearchIteration(array, num) {
 }
 
 function binarySearchRecursion(array, num) {
-    if (array.length === 0 && array[0] === num) return true
+    if (array.length === 1 && array[0] === num) return true
 
     let midIndex = array.length / 2
     let midValue = array[midIndex]
