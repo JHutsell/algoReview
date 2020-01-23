@@ -46,6 +46,6 @@ function binarySearchRecursion(array, num) {
         return binarySearchRecursion(array.slice(midIndex, array.length - 1), num)
         // in this case, we are only looking at the array from the middle to end, as the middle value is less than our target
     } else {
-        return midIndex
+        return true
     }
 }
